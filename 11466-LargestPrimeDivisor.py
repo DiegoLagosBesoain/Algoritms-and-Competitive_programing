@@ -224,8 +224,6 @@ class line:
             (self.a*line.a + self.b*line.b)
             / (math.sqrt(self.a**2 + self.b**2)*math.sqrt(line.a**2+line.b**2))
         )
-    def distancia_punto_linea(self, p: point) -> float:
-        return abs(self.a*p.x + self.b*p.y + self.c) / math.sqrt(self.a**2 + self.b**2)
 # numpy IS NOT part of the standard libraries
 @dataclass
 class segment:
@@ -370,7 +368,7 @@ def generar_poligono_regular_de_N_lados_y_un_punto(punto,radio,centro,N):
         y = centro.y + radio * math.sin(theta)
         vertices.append((x, y))
     return vertices
-def encontrar_centro_circulo(puntos):#3 puntos
+def encontrar_centro_circulo(puntos):
     AB=line.from_points(puntos[0],puntos[1])
     BC=line.from_points(puntos[1],puntos[2])
     if(abs(AB.slope())<EPS):
@@ -398,3 +396,23 @@ def encontrar_divisores(numero):
             divisors.append(numero // i)
     divisors.sort()
     return divisors
+N=int(sys.stdin.readline())
+def divisor_primo_mayor(numero):
+    prime_iter=primes_
+    
+    i=0
+    primo_mas_grande=-1
+    while prime_iter[i]<=numero :
+        if numero%prime_iter[i]==0:
+            primo_mas_grande=max(primo_mas_grande,prime_iter[i])
+        i+=1
+    return primo_mas_grande
+
+
+N=int(sys.stdin.readline())
+while N!=0:
+    
+    print(divisor_primo_mayor(N))
+    N=int(sys.stdin.readline())
+    
+
