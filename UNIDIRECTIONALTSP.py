@@ -3,7 +3,7 @@
 
 
 def backtraking_matriz(matriz,fila,columna,suma_actual,suma_minima,secuencia_actual,secuencia_minima):
-    if columna>len(matriz)-1:
+    if columna==len(matriz[0])-1:
         
         if suma_actual<suma_minima[0]:
             suma_minima[0]=suma_actual
