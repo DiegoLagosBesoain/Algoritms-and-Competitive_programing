@@ -1,2 +1,2 @@
 
-            color[i] = 0
+        if profit>=0:

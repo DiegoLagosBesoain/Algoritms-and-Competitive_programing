@@ -1,7 +1,8 @@
 import sys 
 
 
-def verificar_nodo(nodo,grafo,colores,tamañoR,tamañoA):#este es mio para casos donde tengo una lsita de adyacencias tendira que hacer otro si uso la matriz
+def verificar_nodo(nodo,grafo,colores,tamañoR,tamañoA):#este es mio para casos donde tengo una lsita de adyacencias tendira que hacer otro si uso la matriz 
+    #en este codigo busco todos los que puedo juntar, si tengo compoenetes separadas no me importa, sigo buscando en las partes que funcionan
     stack=[]
     resultado=True
     if colores[nodo]=="R":
