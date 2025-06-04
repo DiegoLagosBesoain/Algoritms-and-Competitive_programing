@@ -2,7 +2,7 @@ import sys
 import functools
 @functools.lru_cache(None)
 def torre_mas_larga_comun(torre1,torre2):
-    ...
+    
     if not torre1 or not torre2:
         return 0
     if torre1[0]==torre2[0]:
