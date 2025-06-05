@@ -1,10 +1,7 @@
 import sys
 from itertools import permutations
-def generar_reordenaciones_unicas(bloque):
-   
-    return set(permutations(bloque))
+
 def contar_grupos_consecutivos(cadena):
-    
     if not cadena:
         return 0
     grupos = 1
@@ -12,12 +9,15 @@ def contar_grupos_consecutivos(cadena):
         if cadena[i] != cadena[i-1]:
             grupos += 1
     return grupos
+
+def generar_reordenaciones_unicas(bloque):
+    return set(permutations(bloque))
+
 def fewest_flops(cadena, tam_bloque):
     n = len(cadena)
     num_bloques = n // tam_bloque
     bloques = [cadena[i * tam_bloque:(i + 1) * tam_bloque] for i in range(num_bloques)]
 
-    # dp[i][ultima_letra] = mínima cantidad de grupos hasta bloque i terminando con ultima_letra
     dp = [{} for _ in range(num_bloques)]
 
     # Primer bloque
@@ -43,12 +43,10 @@ def fewest_flops(cadena, tam_bloque):
                     dp[i][letra_fin] = total
 
     return min(dp[-1].values())
-    
-t=int(sys.stdin.readline().strip())
 
+# Entrada
+t = int(sys.stdin.readline().strip())
 for _ in range(t):
-    k , word = sys.stdin.readline().strip().split()
-    k=int(k)
-    cantidad_de_bloques=len(word)//k
-    print( fewest_flops(word,k)-1)
-#no funciona correctamente
+    k, word = sys.stdin.readline().strip().split()
+    k = int(k)
+    print(fewest_flops(word, k) - 1)
