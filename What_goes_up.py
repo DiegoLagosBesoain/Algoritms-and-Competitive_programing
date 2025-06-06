@@ -13,21 +13,18 @@ def LIC(lista,indice):
 def LIS(lista, indice):
     if indice == 0:
         return [lista[0]]
-    
     mejor = []
     for j in range(indice):
         if lista[j] < lista[indice]:
             subseq = LIS(lista, j)
             if len(subseq) > len(mejor):
                 mejor = subseq
-    
-    return mejor + [lista[indice]]
+    return mejor+[lista[indice]]
 
 numero=sys.stdin.readline().strip()
 lista=[]
 while numero!="":
     numero=int(numero)
-    
     lista.append(numero)
     numero=sys.stdin.readline().strip()
 print(lista)
