@@ -18,12 +18,8 @@ def mejor_trayecto(col, alt, matriz):
 
     
     opciones.append(mejor_trayecto(col - 1, alt, matriz) + 30 - viento)
-
-    
     if alt > 0:
         opciones.append(mejor_trayecto(col - 1, alt - 1, matriz) + 60 - viento)
-
-    
     if alt < 9:
         opciones.append(mejor_trayecto(col - 1, alt + 1, matriz) + 20 - viento)
 
