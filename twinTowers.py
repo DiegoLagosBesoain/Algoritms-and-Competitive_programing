@@ -1,5 +1,5 @@
 import sys
-#problema de distancia nde edicion pero ahora preguntando la cadena despues de edicion mas larga
+#problema de distancia de edicion pero ahora preguntando la cadena despues de edicion mas corta que deja la secuencia mas larga
 import functools
 @functools.lru_cache(None)
 def torre_mas_larga_comun(torre1,torre2):

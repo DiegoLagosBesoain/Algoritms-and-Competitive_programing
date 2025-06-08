@@ -1,5 +1,6 @@
 import sys
 import functools
+
 @functools.lru_cache(None)
 def LIS(lista,indice):
     if indice==0:
